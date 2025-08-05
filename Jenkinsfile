@@ -37,6 +37,6 @@ pipeline {
                 sh "docker push chandana1213/coffee:latest"
             }
         }  
+    }
   }
-}
 }
