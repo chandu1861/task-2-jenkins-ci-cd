@@ -10,14 +10,14 @@ pipeline {
 
         stage('Build and tag') {
             steps {
-                sh "docker build -t chandana1213/img:v1 ."
+                sh "docker build -t chandana1213/coffee:latest ."
             }
         }
 
         stage('Containersation') {
             steps {
                 sh '''
-                    docker run -it -d --name c3 -p 9010:8000 chandana1213/img:v1
+                    docker run -it -d --name c3 -p 9010:8000 chandana1213/coffee:latest
                 '''
             }
         }
@@ -34,7 +34,7 @@ pipeline {
 
         stage('Pushing image to repository') {
             steps {
-                sh "docker push chandana1213/img:v1"
+                sh "docker push chandana1213/coffee:latest"
             }
         }  
   }
